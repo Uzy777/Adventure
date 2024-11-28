@@ -44,6 +44,15 @@ while True:
         print("\nInvalid! (yes/no)")
 
 
+print("\nTitle: The Great Urban Pursuit")
+print("""The city is alive with neon lights and chaos. You’re in a rush,
+but not just any rush—someone stole a priceless artifact from your friend,
+and you're determined to get it back. But the path isn’t straightforward,
+and your choices will shape the story.""")
+
+# Wait x seconds before continuing
+time.sleep(2.5)
+
 # TODO - Add a timer to have urgency in input 30seconds 🏃‍♂️💨
 # Decision 1: Choosing Your Vehicle
 print(colored("\nChoosing Your Vehicle", attrs=["underline", "bold"]))
