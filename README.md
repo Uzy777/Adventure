@@ -14,7 +14,7 @@ A simple interactive Python project where users embark on an adventure by making
 ## Getting Started
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.9>
 - A text editor or IDE (e.g., VSCode, PyCharm)
 
 ---
@@ -26,11 +26,7 @@ A simple interactive Python project where users embark on an adventure by making
    cd adventure-story
 
 
-
-pip install emoji
-
-
-
+pip install termcolor
 
 
 LIST OF ADDITIONAL FEATURES
