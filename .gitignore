@@ -2,3 +2,4 @@ venv/
 .python-version
 .vscode/
 temp.txt
+__pycache__
