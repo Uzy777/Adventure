@@ -1,3 +1,9 @@
+from termcolor import colored, cprint
+
+# ============================================
+#            🧟 The Last Refuge 🧟
+# ============================================
+
 class StorySection:
     def __init__(self, title, text, choices=None, game_over=False):
         self.title = title
@@ -11,8 +17,7 @@ class StorySection:
 
     def display_choices(self):
         for key, choice in self.choices.items():
-            print(f"{key}: {choice['text']}")
-
+            print(colored(f"{key}: ", "green", attrs=["bold"]) + f"{choice['text']}")
 
 # ======================================================================================================================================================================
 # ======================================================================================================================================================================
@@ -897,10 +902,141 @@ secure_safe_room_section = StorySection(
 )
 
 
+# ======================================================================================================================================================================
+# ======================================================================================================================================================================
+#                                                                           SCENARIO 8
+# ======================================================================================================================================================================
+# ======================================================================================================================================================================
+final_stand_section = StorySection(
+    title="The Final Stand",
+    text="As dawn approaches, you realize you can't stay hidden forever. You and your ally decide to make a final stand, hoping to clear a path to safety.",
+    choices={
+        'A': {'text': "Fight the Zombies Head-On 🪓", 'next_section': 'fight_zombies_head_on'},
+        'B': {'text': "Set Up a Defensive Perimeter 🛡️", 'next_section': 'defensive_perimeter'},
+        'C': {'text': "Look for an Escape Route 🚪", 'next_section': 'escape_route'}
+    }
+)
+
+fight_zombies_head_on_section = StorySection(
+    title="Fight the Zombies Head-On",
+    text="You and your ally decide to face the zombies directly, fighting with everything you have.",
+    choices={
+        'A': {'text': "Use Melee Weapons 🪓", 'next_section': 'use_melee_weapons'},
+        'B': {'text': "Use Firearms 🔫", 'next_section': 'use_firearms'}
+    }
+)
+
+use_melee_weapons_section = StorySection(
+    title="Use Melee Weapons",
+    text="You engage the zombies with melee weapons, fighting fiercely. The battle is intense, but you manage to hold your ground.",
+    choices={
+        'A': {'text': "Move to the Resolution 🏁", 'next_section': 'resolution'}
+    }
+)
+
+use_firearms_section = StorySection(
+    title="Use Firearms",
+    text="You use firearms to take down the zombies, but the noise attracts even more. The fight is relentless, and you fall.",
+    choices={
+        'A': {'text': "Game Over - Restart 🔄", 'next_section': 'game_over'}
+    }
+)
+
+defensive_perimeter_section = StorySection(
+    title="Set Up a Defensive Perimeter",
+    text="You set up a defensive perimeter, using barricades and traps to hold off the zombies.",
+    choices={
+        'A': {'text': "Hold Your Ground 🛡️", 'next_section': 'hold_your_ground'},
+        'B': {'text': "Fall Back to a Safe Room 🛏️", 'next_section': 'fall_back_safe_room'}
+    }
+)
+
+hold_your_ground_section = StorySection(
+    title="Hold Your Ground",
+    text="You and your ally hold your ground, fighting off the zombies with the defensive perimeter's help.",
+    choices={
+        'A': {'text': "Move to the Resolution 🏁", 'next_section': 'resolution'}
+    }
+)
+
+fall_back_safe_room_section = StorySection(
+    title="Fall Back to a Safe Room",
+    text="You decide to fall back to a safe room, using the perimeter to slow the zombies down.",
+    choices={
+        'A': {'text': "Move to the Resolution 🏁", 'next_section': 'resolution'}
+    }
+)
+
+escape_route_section = StorySection(
+    title="Look for an Escape Route",
+    text="You decide to find an escape route, hoping to avoid the fight altogether.",
+    choices={
+        'A': {'text': "Search for a Hidden Exit 🔍", 'next_section': 'search_hidden_exit'},
+        'B': {'text': "Create a Distraction 🧨", 'next_section': 'create_distraction'}
+    }
+)
+
+search_hidden_exit_section = StorySection(
+    title="Search for a Hidden Exit",
+    text="You search the building for a hidden exit and find a tunnel leading out.",
+    choices={
+        'A': {'text': "Move to the Resolution 🏁", 'next_section': 'resolution'}
+    }
+)
+
+create_distraction_section = StorySection(
+    title="Create a Distraction",
+    text="You create a distraction to draw the zombies away, giving you a chance to escape.",
+    choices={
+        'A': {'text': "Move to the Resolution 🏁", 'next_section': 'resolution'}
+    }
+)
 
 
+# ======================================================================================================================================================================
+# ======================================================================================================================================================================
+#                                                                           SCENARIO 9
+# ======================================================================================================================================================================
+# ======================================================================================================================================================================
+resolution_section = StorySection(
+    title="The Resolution",
+    text="After enduring countless trials and facing numerous dangers, you and your ally finally find a moment of respite. The horizon hints at a new beginning as you emerge from the chaos of the city.",
+    choices={
+        'A': {'text': "Reflect on Your Journey 🧘", 'next_section': 'reflect_journey'},
+        'B': {'text': "Plan for the Future 🗺️", 'next_section': 'plan_future'},
+        'C': {'text': "Say Goodbye to Your Ally 👋", 'next_section': 'say_goodbye'}
+    }
+)
 
+reflect_journey_section = StorySection(
+    title="Reflect on Your Journey",
+    text="You take a moment to reflect on everything you've been through. The hardships, the losses, and the victories all culminate in this moment of quiet contemplation.",
+    choices={
+        'A': {'text': "The End 🌅", 'next_section': 'the_end'}
+    }
+)
 
+plan_future_section = StorySection(
+    title="Plan for the Future",
+    text="With the immediate dangers behind you, you and your ally begin to plan for the future. It's time to rebuild and create a new life in this post-apocalyptic world.",
+    choices={
+        'A': {'text': "The End 🌅", 'next_section': 'the_end'}
+    }
+)
+
+say_goodbye_section = StorySection(
+    title="Say Goodbye to Your Ally",
+    text="Your journey together comes to an end as you part ways with your ally. With a final wave, you each head off in different directions, hoping for a brighter future.",
+    choices={
+        'A': {'text': "The End 🌅", 'next_section': 'the_end'}
+    }
+)
+
+the_end_section = StorySection(
+    title="The End",
+    text="Congratulations! You've completed the adventure. Thank you for playing.",
+    game_over=True
+)
 
 
 # ======================================================================================================================================================================
@@ -961,7 +1097,7 @@ story = {
     'find_items_building': find_items_building_section,
     'alert_zombies_building': alert_zombies_building_section,
     'find_safe_room': find_safe_room_section,
-    'stay_hidden_alley': hide_wait_alley_section,
+    'hide_wait_alley': hide_wait_alley_section,
     'stay_hidden_alley': stay_hidden_alley_section,
     'move_after_waiting_alley': move_after_waiting_alley_section,
 # ======================== SCENARIO 5 ========================
@@ -998,23 +1134,39 @@ story = {
     'street_ambush': street_ambush_section,
     'move_stealthily_streets': move_stealthily_streets_section,
     'continue_stealthily_streets': continue_stealthily_streets_section,
-    '': fight_off_zombie_section,
-    '': run_and_hide_section,
-    '': run_for_it_streets_section,
-    '': find_hiding_spot_streets_section,
-    '': fight_zombies_streets_section,
-    '': look_for_vehicle_section,
-    '': start_car_drive_section,
-    '': speed_through_streets_section,
-    '': find_safe_park_section,
-    '': check_car_traps_section,
-    '': investigate_noise_car_section,
-    '': abandon_car_section,
-    '': search_safe_building_section,
-    '': search_school_supplies_section,
-    '': break_into_classroom_section,
-    '': search_another_area_section,
-    '': secure_safe_room_section,
-
+    'fight_off_zombie': fight_off_zombie_section,
+    'run_and_hide': run_and_hide_section,
+    'run_for_it_streets': run_for_it_streets_section,
+    'find_hiding_spot_streets': find_hiding_spot_streets_section,
+    'fight_zombies_streets': fight_zombies_streets_section,
+    'look_for_vehicle': look_for_vehicle_section,
+    'start_car_drive': start_car_drive_section,
+    'speed_through_streets': speed_through_streets_section,
+    'find_safe_park': find_safe_park_section,
+    'check_car_traps': check_car_traps_section,
+    'investigate_noise_car': investigate_noise_car_section,
+    'abandon_car': abandon_car_section,
+    'search_safe_building': search_safe_building_section,
+    'search_school_supplies': search_school_supplies_section,
+    'break_into_classroom': break_into_classroom_section,
+    'search_another_area': search_another_area_section,
+    'secure_safe_room': secure_safe_room_section,
+# ======================== SCENARIO 8 ========================
+    'final_stand': final_stand_section,
+    'fight_zombies_head_on': fight_zombies_head_on_section,
+    'use_melee_weapons': use_melee_weapons_section,
+    'use_firearms': use_firearms_section,
+    'defensive_perimeter': defensive_perimeter_section,
+    'hold_your_ground': hold_your_ground_section,
+    'fall_back_safe_room': fall_back_safe_room_section,
+    'escape_route': escape_route_section,
+    'search_hidden_exit': search_hidden_exit_section,
+    'create_distraction': create_distraction_section,
+# ======================== SCENARIO 9 ========================
+    'resolution': resolution_section,
+    'reflect_journey': reflect_journey_section,
+    'plan_future': plan_future_section,
+    'say_goodbye': say_goodbye_section,
+    'the_end': the_end_section
 }
 
