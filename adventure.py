@@ -1,4 +1,4 @@
-import sys, time
+import sys, time, textwrap, subprocess, os
 # https://pypi.org/project/termcolor/
 from termcolor import colored, cprint
 
@@ -19,6 +19,8 @@ __        __   _                            _____
 
 adventure_run = True
 
+tts_enabled = False
+
 # skip = 0
 
 #### FUNCTIONS ####
@@ -34,6 +36,175 @@ def rules():
     print("• Input your decision (A, B, C, D)")
     print("• Read the outcome")
     wait(2.5)
+
+
+def toggle_tts():
+    global tts_enabled
+    tts_enabled = not tts_enabled  # Toggle the TTS setting
+    print("TTS is now turned", "ON" if tts_enabled else "OFF")
+    # tts("TTS is now turned ON!")
+    if tts_enabled:
+        tts("TTS is now turned On")
+    else:
+        tts("TTS is now turned Off")
+    main_menu()
+
+
+# en-US-JennyNeural
+# Function to suppress unwanted output from the subprocess
+def tts(text, voice="en-GB-SoniaNeural"):
+    # if not tts_enabled:
+    #     return
+    # Create the command to run in the background
+    command = [
+        "edge-playback",
+        "--text", text,
+        "--voice", voice
+    ]
+    
+    # Open a subprocess and redirect output to null
+    with open(os.devnull, 'w') as devnull:
+        subprocess.run(command, stdout=devnull, stderr=devnull)
+    
+
+
+
+# ============================================
+#            🧟 The Last Refuge 🧟
+# ============================================
+# ============================================
+#            Decision 1: Entering the Safehouse
+# ============================================
+def the_safehouse():
+# --- Plot ---
+    print(colored("\nEntering the Safehouse", attrs=["underline", "bold"]))
+    text = """
+        You approach the Safehouse, an old, crumbling building that once offered shelter to many.
+        Now, it’s a silent monument to the apocalypse. Zombies roam outside, their groans cutting through the stillness of the night.
+        Inside, the Safehouse is dark and foreboding.
+    """
+    cleaned_text = textwrap.dedent(text).strip()
+    print(colored(cleaned_text, 'blue'))
+    tts(text)
+
+# --- Choices ---
+    print(colored("A: ", "green", attrs=["bold"])+ "Enter the Main Hall 🏚️")
+    print(colored("B: ", "green", attrs=["bold"])+ "Go to the Basement 🪔")
+    print(colored("C: ", "green", attrs=["bold"])+ "Check the Upstairs Rooms 🔼")
+
+    while adventure_run:
+        tts("What do you do?")
+        decision = input("What do you do?: ").upper()
+
+# --- Decision A ---
+        if decision == "A":
+            print("\nYou push open the creaking door and step into the main hall. The smell of decay fills the air, and your footsteps echo through the empty space. Broken furniture and debris litter the floor. Suddenly, you hear a scratching noise coming from the shadows.")
+            tts("You push open the creaking door and step into the main hall. The smell of decay fills the air, and your footsteps echo through the empty space. Broken furniture and debris litter the floor. Suddenly, you hear a scratching noise coming from the shadows.")
+
+            print(colored("A: ", "green", attrs=["bold"])+ "Hide Behind the Counter 🤫")
+            print(colored("B: ", "green", attrs=["bold"])+ "Check the Source of the Noise 🔍")
+            print(colored("C: ", "green", attrs=["bold"])+ "Block the Entrance 🔒")
+            tts("What do you do?")
+            sub_decision = input("What do you do?: ").upper()
+
+            if sub_decision == "A":
+                print("\nYou crouch behind the counter, heart pounding. The scratching grows louder, and a decaying hand reaches over the counter. You hold your breath as a zombie shuffles by, missing you by inches.")
+                tts("You crouch behind the counter, heart pounding. The scratching grows louder, and a decaying hand reaches over the counter. You hold your breath as a zombie shuffles by, missing you by inches.")
+
+                print(colored("A: ", "green", attrs=["bold"])+ "Stay Hidden 🕰️")
+                print(colored("B: ", "green", attrs=["bold"])+ "Run for It 🏃")
+                tts("What do you do?")
+                sub_sub_decision = input("What do you do?: ").upper()
+                    
+                if sub_sub_decision == "A":
+                    print("\nYou wait in silence as the zombie moves away. Hours pass, and you realize you’re safe, but the lack of food and water weakens you. 🌑🧟‍♂️")
+                    print("Outcome: Safe but hungry.")
+                    tts("You wait in silence as the zombie moves away. Hours pass, and you realize you’re safe, but the lack of food and water weakens you.")
+                    break
+
+                elif sub_sub_decision == "B":
+                    print("\nYou dash out from behind the counter, making noise. The zombie turns and chases you, but you manage to escape. However, the effort leaves you exhausted. 🏃‍♂️💨")
+                    print("Outcome: Escaped but exhausted.")
+                    tts("You dash out from behind the counter, making noise. The zombie turns and chases you, but you manage to escape. However, the effort leaves you exhausted.")
+                    break
+            
+            
+            elif sub_decision == "B":
+                print("\nCheck the Source of the Noise You gather your courage and approach the noise. You discover a hidden room filled with supplies, but your presence alerts a zombie lurking nearby. 🧟‍♂️")
+                tts("Check the Source of the Noise You gather your courage and approach the noise. You discover a hidden room filled with supplies, but your presence alerts a zombie lurking nearby.")
+            break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# --- Decision B ---
+        elif decision == "B":
+            print("\nThe back room is dark and cramped, with overturned shelves and broken crates.")
+            print("You manage to find a can of beans and an old flashlight, but the noise of your search draws attention.")
+            tts("The back room is dark and cramped, with overturned shelves and broken crates. You manage to find a can of beans and an old flashlight, but the noise of your search draws attention.")
+            print(colored("A: ", "green", attrs=["bold"])+ "Fight")
+            print(colored("B: ", "green", attrs=["bold"])+ "Flee")
+            tts("What do you do?")
+            sub_decision = input("What do you do?: ").upper()
+
+            if sub_decision == "A":
+                print("\nA zombie bursts in, and you barely fend it off with a nearby crowbar. 💔")
+                print("You survive the encounter but your injuries slow you down.")
+                tts("A zombie bursts in, and you barely fend it off with a nearby crowbar. You survive the encounter but your injuries slow you down.")
+            elif sub_decision == "B":
+                print("\nIn your panic, you drop the flashlight while running out, leaving you more vulnerable later. 🕯️")
+                print("You escape, but the lack of light will make your next steps more dangerous.")
+                tts("In your panic, you drop the flashlight while running out, leaving you more vulnerable later. You escape, but the lack of light will make your next steps more dangerous.")
+            break
+
+# --- Decision C ---
+        elif decision == "C":
+            print("\nThe alley is narrow and reeks of decay. The faint sound of dripping water masks your footsteps, but every shadow feels like a threat.")
+            tts("The alley is narrow and reeks of decay. The faint sound of dripping water masks your footsteps, but every shadow feels like a threat.")
+            print(colored("A: ", "green", attrs=["bold"]) + "Use the flashlight")
+            print(colored("B: ", "green", attrs=["bold"]) + "Move quietly")
+            tts("What do you do?")
+            sub_decision = input("What do you do?: ").upper()
+
+            if sub_decision == "A":
+                print("\nYou spot a lurking zombie in time and slip past it safely, conserving your strength. 🔦")
+                print("Your decision saved you from danger, and you feel a bit safer now.")
+                tts("You spot a lurking zombie in time and slip past it safely, conserving your strength. Your decision saved you from danger, and you feel a bit safer now.")
+            elif sub_decision == "B":
+                print("\nYou trip over a pile of debris, the noise alerting a small group of infected that begin to pursue you. ⚠️")
+                print("You barely escape, but now you're on the run with little time to spare.")
+                tts("You trip over a pile of debris, the noise alerting a small group of infected that begin to pursue you. You barely escape, but now you're on the run with little time to spare.")
+            break
+
+        else:
+            print("\nInvalid choice. Please try again! 🚫")
+            tts("Invalid choice. Please try again!")
+    wait(2)
+
+
+# ============================================
+#            Decision 2: The Streets
+# ============================================
+
+
+
+
 
 ## Adventures
 # The Great Urban Pursuit
@@ -336,6 +507,8 @@ def the_great_urban_pursuit():
 
 
 
+def the_last_refuge():
+    the_safehouse()
 
 
 
@@ -351,15 +524,21 @@ def the_great_urban_pursuit():
 
 # Main Menu Screen Selection
 def main_menu():
+    global tts_enabled
+
     while True:
         print("\nSelect a adventure! (1-4)")
         print("1: The Great Urban Pursuit")
-        # print("2: xxxxx")
+        print("2: The Last Refuge")
         # print("3: xxxxx")
         # print("4: xxxxx")
         print("5: Exit")
+        print("")
+        print("##### SOUND SETTINGS #####")
+        print("X: Toggle TTS (current: {})".format("ON" if tts_enabled else "OFF"))
 
-        choice = input("Adventure on: ").strip()
+        # choice = "2"
+        choice = input("Adventure on: ").strip().upper()
 
         if choice == "1":
             print("Context: The city is alive with neon lights and chaos. You’re in a rush, but not just any rush—someone stole a priceless artifact from your friend, and you're determined to get it back. But the path isn’t straightforward, and your choices will shape the story.")
@@ -374,7 +553,17 @@ def main_menu():
             the_great_urban_pursuit()
 
         elif choice == "2":
-            pass
+            print("Context: The city you once knew is now a haunting wasteland, overrun by the undead. Every corner hides a potential threat, and survival is a constant struggle. As night falls, the Safehouse stands as your only refuge amidst the chaos. But safety comes with its own set of horrors.")
+            # confirm = input("Continue with this adventure? (yes/no): ").lower()
+            # if confirm == "yes":
+            #     pass
+            # elif confirm == "no":
+            #     main_menu()
+            # else:
+            #     print("\Invalid choice. (yes/no)")
+            # rules()
+            the_last_refuge()
+
         elif choice == "3":
             pass
         elif choice == "4":
@@ -382,6 +571,8 @@ def main_menu():
         elif choice == "5":
             print("\nRun run little chicken! 🐔")
             break
+        elif choice == "X":
+            toggle_tts()
         else:
             print("\Invalid choice. Please select a valid story (1-4) or exit (5)")
 
@@ -401,36 +592,6 @@ main_menu()
 # 2 - Scary theme
 # 3 - Mystery theme
 # 4- Kids theme
-
-
-
-# while True:
-#     ready = input("\nAre you ready to explore and see what is in store for you? (yes/no): ").lower()
-#     # ready = "yes"
-
-#     if ready == "yes":
-
-#         break
-
-#     elif ready == "no":
-#         print("Run run little chicken! 🐔")
-#         quit()
-
-#     else:
-#         print("\nInvalid! (yes/no)")
-
-
-# print("\nTitle: The Great Urban Pursuit")
-# print("""The city is alive with neon lights and chaos. You’re in a rush,
-# but not just any rush—someone stole a priceless artifact from your friend,
-# and you're determined to get it back. But the path isn’t straightforward,
-# and your choices will shape the story.""")
-
-# Wait x seconds before continuing
-# wait(2.5)
-
-
-
 
 
 print("That's it! I hope you enjoyed!")
