@@ -3,3 +3,5 @@ venv/
 .vscode/
 temp.txt
 __pycache__
+scary.txt
+ai.txt
