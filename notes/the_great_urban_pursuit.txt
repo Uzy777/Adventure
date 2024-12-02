@@ -1,0 +1,138 @@
+    Decision 1: Choosing Your Vehicle
+
+        "The thief is getting away! You need to pick a vehicle quickly to pursue him. What will you choose?"
+
+        A: A sleek black BMW M3, known for its speed.
+        B: A motorbike, agile but risky since you’re not an expert rider.
+        C: An electric mountain bike, slower but you're comfortable with it.
+
+    Outcomes:
+        BMW: You zoom through traffic, but the thief notices you’re chasing him.
+        Motorbike: You struggle to keep up, wobbling through turns.
+        Mountain bike: You blend into the crowd but lag behind.
+
+    Decision 2: The Shortcut
+
+        "The thief takes a sharp turn into an alleyway. Do you:"
+
+        A: Follow him into the narrow alley.
+        B: Take the main road and hope to cut him off.
+        C: Stop and call for help.
+
+    Outcomes:
+        Alley: Your vehicle barely fits, but you keep him in sight.
+        Main road: You lose sight of him but stumble upon a clue (a dropped wallet).
+        Call for help: The adventure ends prematurely—police take over the case.
+
+    Decision 3: The Wallet
+
+        "You find a wallet dropped by the thief. Do you:"
+
+        A: Pick it up and keep chasing.
+        B: Open it and check for clues.
+        C: Leave it and focus on the chase.
+
+    Outcomes:
+        Keep chasing: You catch a glimpse of the thief entering a building.
+        Check for clues: Inside the wallet is an ID and a suspicious keycard.
+        Leave it: You lose valuable time but remain on the trail.
+
+    Decision 4: The Fight
+
+        "You corner the thief, but he’s not giving up without a fight. What do you do?"
+
+        A: Try to make peace and talk him down.
+        B: Fight him with your fists.
+        C: Use the sandwich in your bag as a distraction.
+        D: Pull out a toy gun and hope to bluff.
+
+    Outcomes:
+        Peace: He momentarily hesitates but escapes when you’re distracted.
+        Fists: You overpower him, but he calls for backup.
+        Sandwich: He grabs the sandwich and runs, leaving behind a map.
+        Toy gun: He laughs but surrenders, thinking you’re unpredictable.
+
+    Decision 5: The Map
+
+        "The map shows a warehouse near the docks. Do you:"
+
+        A: Go there immediately.
+        B: Call a friend for backup.
+        C: Ignore it and follow another lead.
+
+    Outcomes:
+        Go alone: The warehouse is a trap, and you’re ambushed.
+        Call backup: Your friend helps you navigate the situation safely.
+        Ignore: You lose the trail but stumble onto another clue (a dropped phone).
+
+    Decision 6: The Dropped Phone
+
+        "You find a phone ringing on the ground. Do you:"
+
+        A: Answer the call.
+        B: Take it to the police.
+        C: Smash it, thinking it’s a trap.
+
+    Outcomes:
+        Answer: The caller gives cryptic clues leading to the thief’s location.
+        Police: The police delay action, and the thief gets away.
+        Smash: You lose a potential lead but feel safer.
+
+    Decision 7: The Final Confrontation
+
+        "You find the thief again at a secret hideout. What’s your approach?"
+
+        A: Sneak in through the back entrance.
+        B: Go in guns blazing (or bluffing).
+        C: Wait for the thief to come out.
+
+    Outcomes:
+        Sneak: You successfully retrieve the artifact.
+        Guns blazing: You scare the thief, but reinforcements arrive.
+        Wait: You lose your chance, and the thief disappears.
+
+    Decision 8: The Money Drop
+
+        "You see someone drop a wad of cash near the hideout. Do you:"
+
+        A: Take it for yourself.
+        B: Return it to the person.
+        C: Ignore it and keep focused on the hideout.
+
+    Outcomes:
+        Take it: You’re caught and arrested for theft. Game over.
+        Return it: The person helps distract the thief, aiding your mission.
+        Ignore: You stay on track but miss an opportunity for help.
+
+    Decision 9: The Escape
+
+        "The thief tries to flee on a speedboat. You:"
+
+        A: Steal another boat and give chase.
+        B: Swim after him.
+        C: Call the coast guard.
+
+    Outcomes:
+        Steal a boat: You catch up and corner the thief.
+        Swim: You exhaust yourself and lose the chase.
+        Coast guard: They capture the thief, but you don’t get credit.
+
+    Decision 10: The Artifact
+
+    "You recover the artifact, but you’re surrounded by the thief’s gang. Do you:"
+
+    A: Surrender and hope for mercy.
+    B: Use the artifact as a bargaining chip.
+    C: Fight your way out.
+
+Outcomes:
+
+    Surrender: You’re captured. Game over.
+    Bargain: You trick them into letting you escape.
+    Fight: You narrowly escape with injuries.
+
+Endings
+
+    Victory: Successfully recover the artifact and return it to your friend.
+    Neutral: The artifact is recovered, but you lose something in the process (credit, trust, or your freedom).
+    Failure: The adventure ends due to poor choices (arrest, injury, or being outsmarted).
