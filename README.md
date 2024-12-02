@@ -27,6 +27,7 @@ A simple interactive Python project where users embark on an adventure by making
 
 
 pip install termcolor
+pip install edge-tts
 
 
 LIST OF ADDITIONAL FEATURES
