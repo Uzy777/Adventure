@@ -1,3 +1,5 @@
+# Archived as moved to - https://github.com/Uzy777/Python-Projects/tree/main/Adventure%20Story
+
 # Adventure Story Project
 
 A simple interactive Python project where users embark on an adventure by making choices that determine the story's progression. The project is designed with simplicity and extensibility in mind, allowing for future enhancements.
